@@ -25,7 +25,7 @@ const Profile = () => {
         </svg>
       </span>
       <span className={classes.profileImage}>
-        <img src="profile.jpg" />
+        <img alt="err" src="profile.jpg" />
       </span>
     </div>
   );

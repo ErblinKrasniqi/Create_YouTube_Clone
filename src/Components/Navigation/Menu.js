@@ -15,7 +15,7 @@ const Menu = () => {
         </svg>
       </span>
 
-      <img className={classes.logo} src="yotube-logo.svg"></img>
+      <img alt="err" className={classes.logo} src="yotube-logo.svg"></img>
     </div>
   );
 };
