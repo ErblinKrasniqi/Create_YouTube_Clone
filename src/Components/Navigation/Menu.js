@@ -1,10 +1,13 @@
 import classes from "./NavBar.module.css";
-
+import { toggleMenu } from "../App/store";
+import { useDispatch } from "react-redux";
 
 const Menu = () => {
+  const dispatch = useDispatch();
+  
   return (
     <div className={classes.container}>
-      <span className={classes.shadee}>
+      <span onClick={()=> dispatch(toggleMenu())} className={classes.shadee}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           height="48"

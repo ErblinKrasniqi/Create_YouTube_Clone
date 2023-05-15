@@ -3,8 +3,6 @@
   width: 14rem;
 }
 
-
-
 .item {
   display: flex;
   align-items: center;
@@ -34,7 +32,6 @@
   border-bottom: 1px;
 }
 
-
 .sideBar img {
   filter: invert(100%);
   width: 1.5rem;
@@ -45,9 +42,28 @@
   border-radius: 10px;
 }
 
-.border{
+.border {
   border-bottom: 1px solid #3f3f3fad;
   padding-bottom: 1rem;
   padding-left: 0.5rem;
 }
 
+/* on click */
+
+.clicked_sideBar {
+  width: 4.5rem;
+}
+
+.clicked_item {
+  display: flex;
+  flex-direction: column;
+  padding: 0.8rem 0.2rem;
+}
+
+.clicked_item h1 {
+  font-size: 0.7rem;
+}
+
+.clicked_active {
+  padding: 0.8rem 0.2rem;
+}

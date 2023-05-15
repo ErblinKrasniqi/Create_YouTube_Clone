@@ -1,21 +1,22 @@
 import classes from "./SideBar.module.css";
-import { useState } from "react";
 
-const Section = ({ data }) => {
-  const [active, setActive] = useState(1);
 
+const Section = ({ data, getId, active, getClicked }) => {
+  
   const clickHandler = (id) => {
-    setActive(id);
+    getId(id);
   };
 
   return (
     <div className={classes.border}>
-      {data.map((item, id) => (
+
+      {data.map((item) => (
         <div
           key={item.id}
-          className={`${classes.item} ${
-            active === item.id ? classes.active : ""
-          }`}
+          className={`${getClicked === true ? classes.clicked_item : ""} ${
+            classes.item
+          } ${active === item.id ? classes.active : ""}
+          `}
           onClick={() => {
             clickHandler(item.id);
           }}
