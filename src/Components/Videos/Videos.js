@@ -11,6 +11,7 @@ const DUMMY_DATA = [
     thumbNail: "/images/image1.jpg",
     channelImage: "/images/profile1.jpg",
     videoLength: "2:01",
+    verified: true,
   },
   {
     id: "2",
@@ -22,6 +23,7 @@ const DUMMY_DATA = [
     thumbNail: "/images/image2.jpg",
     channelImage: "/images/profile2.jpg",
     videoLength: "5:05",
+    verified: true,
   },
   {
     id: "3",
@@ -33,6 +35,7 @@ const DUMMY_DATA = [
     thumbNail: "/images/image3.jpg",
     channelImage: "/images/profile3.jpg",
     videoLength: "20:10",
+    verified: false,
   },
   {
     id: "4",
@@ -44,6 +47,7 @@ const DUMMY_DATA = [
     thumbNail: "/images/image4.jpg",
     channelImage: "/images/profile4.jpg",
     videoLength: "14:01",
+    verified: true,
   }
 ];
 
@@ -67,7 +71,8 @@ const Videos = () => {
               </div>
               <div className={classes.verified}>
                 <h4>{data.channel}</h4>
-                <img alt="err" src="/svgs/check.svg"></img>
+                {data.verified === true ? ( <img alt="err" src="/svgs/check.svg"></img>) : ''}
+               
               </div>
               <h2 className={classes.views}>
                 {data.views} views * {data.time} ago
