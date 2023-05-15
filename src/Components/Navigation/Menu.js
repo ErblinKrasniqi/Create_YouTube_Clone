@@ -1,6 +1,6 @@
 import classes from "./NavBar.module.css";
 import { toggleMenu } from "../App/store";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 const Menu = () => {
   const dispatch = useDispatch();
@@ -18,7 +18,7 @@ const Menu = () => {
         </svg>
       </span>
 
-      <img alt="err" className={classes.logo} src="yotube-logo.svg"></img>
+      <img alt="err" className={classes.logo} src="/youtube.svg"></img>
     </div>
   );
 };
