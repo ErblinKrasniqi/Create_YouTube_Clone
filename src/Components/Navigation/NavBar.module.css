@@ -28,6 +28,7 @@
   fill: white;
   cursor: pointer;
   font-size: 1px;
+  margin: 0 0.5rem;
 }
 
 .shadee {
@@ -81,7 +82,7 @@
 }
 
 
-.search button svg {
+.search button img {
   width: 1.5rem;
   fill: white;
 }

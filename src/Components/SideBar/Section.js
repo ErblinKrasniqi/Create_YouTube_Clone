@@ -1,15 +1,12 @@
 import classes from "./SideBar.module.css";
 
-
 const Section = ({ data, getId, active, getClicked }) => {
-  
   const clickHandler = (id) => {
     getId(id);
   };
 
   return (
     <div className={classes.border}>
-
       {data.map((item) => (
         <div
           key={item.id}

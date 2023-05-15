@@ -30,6 +30,7 @@
 .dots {
   display: flex;
   justify-content: space-between;
+  position: relative;
   
 }
 
@@ -40,6 +41,36 @@
   margin: 0 !important;
   visibility: hidden;
   margin-left: auto;
+}
+
+.clickedDot {
+  position: absolute;
+  background-color: #3f3f3f;
+  color: red;
+  margin: 0;
+  padding: 0.6rem 0;
+  right: -150px;
+  top: 1.5rem;
+  border-radius: 10px;
+  z-index: 9999;
+}
+
+.dotItem{
+  display: flex;
+  align-items: center;
+  padding: 0.4rem 1rem;
+  width: 9rem;
+
+  gap: 0.5rem;
+}
+
+.dotItem:hover {
+  background-color: #a1a1a1;
+}
+
+.dotItem img {
+  width: 3rem;
+  visibility: visible;
 }
 
 .video:hover img {

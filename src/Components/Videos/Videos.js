@@ -1,4 +1,6 @@
+import Dots from "./Dots";
 import classes from "./Videos.module.css";
+import { useState } from "react";
 
 const DUMMY_DATA = [
   {
@@ -48,10 +50,18 @@ const DUMMY_DATA = [
     channelImage: "/images/profile4.jpg",
     videoLength: "14:01",
     verified: true,
-  }
+  },
 ];
 
 const Videos = () => {
+  const [active, setActive] = useState(1);
+  const [toggle, setToggle] = useState(false);
+
+  function getId(id) {
+    setToggle(!toggle);
+    setActive(id);
+  }
+
   return (
     <div className={classes.container}>
       {DUMMY_DATA.map((data) => (
@@ -66,13 +76,16 @@ const Videos = () => {
             <div className={classes.videoText}>
               <div className={classes.dots}>
                 <h4>{data.title}</h4>
-
-                <img alt="err" src="/svgs/dots.svg"></img>
+                <img onClick={()=> getId(data.id)} alt="err" src="/svgs/dots.svg"></img>
+                {active === data.id && toggle === true ? <Dots /> : ""}
               </div>
               <div className={classes.verified}>
                 <h4>{data.channel}</h4>
-                {data.verified === true ? ( <img alt="err" src="/svgs/check.svg"></img>) : ''}
-               
+                {data.verified === true ? (
+                  <img alt="err" src="/svgs/check.svg"></img>
+                ) : (
+                  ""
+                )}
               </div>
               <h2 className={classes.views}>
                 {data.views} views * {data.time} ago
