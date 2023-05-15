@@ -4,6 +4,7 @@ import SideBar from "./Components/SideBar/SideBar";
 import React from "react";
 import classes from "./App.module.css";
 import Catergories from "./Components/Categories/Categories";
+import Videos from "./Components/Videos/Videos";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <SideBar />
         <div className={classes.innerWrapper}>
           <Catergories />
+          <Videos />
         </div>
       </div>
     </React.Fragment>

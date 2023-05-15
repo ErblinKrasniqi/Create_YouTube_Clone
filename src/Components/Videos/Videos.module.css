@@ -1,0 +1,78 @@
+.container {
+  display: grid;
+  grid-template-columns: min-content min-content min-content min-content;
+  gap: 1.3rem;
+  margin-left: 1.4rem;
+  margin-top: 1rem;
+}
+
+.container img {
+  width: 100%;
+  object-fit: cover;
+  aspect-ratio: 16/9;
+  border-radius: 13px;
+}
+
+.video {
+  display: grid;
+  grid-template-rows: 1fr 5rem;
+  width: 17.7rem;
+}
+
+.videoInfo {
+  display: flex;
+  margin-top: 0.7rem;
+}
+
+.videoInfo img {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+.image {
+  position: relative;
+}
+
+.image h5 {
+  position: absolute;
+  right: 3px;
+  bottom: 12px;
+  background-color: black;
+  color: white;
+  font-weight: 700;
+  font-size: 12px;
+  padding: 2px 5px;
+  margin: 0;
+}
+
+.videoText h4 {
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+.verified {
+  display: flex;
+  align-items: center;
+}
+
+.verified h4 {
+  padding: 0.3rem 0;
+  font-size: 13px;
+  font-weight: 400;
+  margin-right: 5px;
+  color: rgba(255, 255, 255, 0.753);
+}
+.verified img {
+  filter: invert(100%);
+  width: 1rem;
+  height: 1rem;
+}
+
+.views {
+  font-size: 13px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.753);
+}
