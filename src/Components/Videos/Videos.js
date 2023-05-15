@@ -128,7 +128,7 @@ const Videos = () => {
     setActive(id);
   }
 
-  // make me a for loop where it filters out videos where there is no pants tag
+
   const DUMMY_DATA_FILTERED = DUMMY_DATA.filter((data) => {
     return data.tags.includes(selectMenuValue);
   });
