@@ -1,6 +1,7 @@
 import Dots from "./Dots";
 import classes from "./Videos.module.css";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
 const DUMMY_DATA = [
   {
@@ -13,6 +14,22 @@ const DUMMY_DATA = [
     thumbNail: "/images/image1.jpg",
     channelImage: "/images/profile1.jpg",
     videoLength: "2:01",
+    tags: [
+      "All",
+      "Shirts",
+      "Shoes",
+      "Accessories",
+      "Hats",
+      "Socks",
+      "Underwear",
+      "Bags",
+      "Jackets",
+      "Sweaters",
+      "Suits",
+      "Shorts",
+      "Swimwear",
+      "Sleepwear",
+    ],
     verified: true,
   },
   {
@@ -25,6 +42,22 @@ const DUMMY_DATA = [
     thumbNail: "/images/image2.jpg",
     channelImage: "/images/profile2.jpg",
     videoLength: "5:05",
+    tags: [
+      "All",
+      "Shirts",
+      "Pants",
+      "Shoes",
+      "Accessories",
+      "Socks",
+      "Underwear",
+      "Bags",
+      "Jackets",
+      "Sweaters",
+      "Suits",
+      "Shorts",
+      "Swimwear",
+      "Sleepwear",
+    ],
     verified: true,
   },
   {
@@ -37,6 +70,21 @@ const DUMMY_DATA = [
     thumbNail: "/images/image3.jpg",
     channelImage: "/images/profile3.jpg",
     videoLength: "20:10",
+    tags: [
+      "All",
+      "Shirts",
+      "Shoes",
+      "Accessories",
+      "Hats",
+      "Socks",
+      "Bags",
+      "Jackets",
+      "Sweaters",
+      "Suits",
+      "Shorts",
+      "Swimwear",
+      "Sleepwear",
+    ],
     verified: false,
   },
   {
@@ -49,6 +97,22 @@ const DUMMY_DATA = [
     thumbNail: "/images/image4.jpg",
     channelImage: "/images/profile4.jpg",
     videoLength: "14:01",
+    tags: [
+      "All",
+      "Shirts",
+      "Pants",
+      "Shoes",
+      "Hats",
+      "Socks",
+      "Underwear",
+      "Bags",
+      "Jackets",
+      "Sweaters",
+      "Suits",
+      "Shorts",
+      "Swimwear",
+      "Sleepwear",
+    ],
     verified: true,
   },
 ];
@@ -57,14 +121,21 @@ const Videos = () => {
   const [active, setActive] = useState(1);
   const [toggle, setToggle] = useState(false);
 
+  const selectMenuValue = useSelector((state) => state.selectMenu.value);
+
   function getId(id) {
     setToggle(!toggle);
     setActive(id);
   }
 
+  // make me a for loop where it filters out videos where there is no pants tag
+  const DUMMY_DATA_FILTERED = DUMMY_DATA.filter((data) => {
+    return data.tags.includes(selectMenuValue);
+  });
+
   return (
     <div className={classes.container}>
-      {DUMMY_DATA.map((data) => (
+      {DUMMY_DATA_FILTERED.map((data) => (
         <div key={data.id} className={classes.video}>
           <div className={classes.image}>
             <img alt="err" src={data.thumbNail}></img>
@@ -76,7 +147,11 @@ const Videos = () => {
             <div className={classes.videoText}>
               <div className={classes.dots}>
                 <h4>{data.title}</h4>
-                <img onClick={()=> getId(data.id)} alt="err" src="/svgs/dots.svg"></img>
+                <img
+                  onClick={() => getId(data.id)}
+                  alt="err"
+                  src="/svgs/dots.svg"
+                ></img>
                 {active === data.id && toggle === true ? <Dots /> : ""}
               </div>
               <div className={classes.verified}>

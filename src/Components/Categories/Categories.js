@@ -1,5 +1,7 @@
 import classes from "./Categories.module.css";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { setMenuValue } from "../App/store";
 
 const DUMMY_CATEGORIES = [
   { id: 1, name: "All" },
@@ -22,8 +24,11 @@ const DUMMY_CATEGORIES = [
 const Catergories = () => {
   const [clicked, setClicked] = useState(1);
 
-  function clickHandler(id) {
+  const dispatch = useDispatch();
+
+  function clickHandler(id, tag) {
     setClicked(id);
+    dispatch(setMenuValue(tag));
   }
 
   return (
@@ -33,7 +38,9 @@ const Catergories = () => {
       </div>
       {DUMMY_CATEGORIES.map((item) => (
         <div
-          onClick={() => clickHandler(item.id)}
+          onClick={() => {
+            clickHandler(item.id, item.name);
+          }}
           key={item.id}
           className={`${classes.catergorie} ${
             clicked === item.id ? classes.active : classes.hovering

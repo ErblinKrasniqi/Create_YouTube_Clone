@@ -1,6 +1,6 @@
 import classes from "./NavBar.module.css";
 import { toggleMenu } from "../App/store";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 const Menu = () => {
   const dispatch = useDispatch();
