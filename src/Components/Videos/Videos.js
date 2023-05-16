@@ -3,6 +3,7 @@ import classes from "./Videos.module.css";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 
+
 const DUMMY_DATA = [
   {
     id: "1",
@@ -117,11 +118,14 @@ const DUMMY_DATA = [
   },
 ];
 
+
+
 const Videos = () => {
   const [active, setActive] = useState(1);
   const [toggle, setToggle] = useState(false);
 
   const selectMenuValue = useSelector((state) => state.selectMenu.value);
+
 
   function getId(id) {
     setToggle(!toggle);

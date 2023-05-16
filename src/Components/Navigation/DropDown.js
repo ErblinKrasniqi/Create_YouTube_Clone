@@ -23,8 +23,12 @@ const DropDown = ({ search }) => {
     return regex.test(data.title);
   });
 
-  const limitedData = filteredData.slice(0, 10); // Limit to 5 items
-  
+  let limitedData = filteredData.slice(0, 10); // Limit to 5 items
+
+  if (limitedData.length === 0) {
+    limitedData = [{ id: 1, title: `${search}...` }];
+  }
+
   return (
     <ul className={classes.typing}>
       {limitedData.map((data) => (
