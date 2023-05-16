@@ -3,7 +3,6 @@ import classes from "./Videos.module.css";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 
-
 const DUMMY_DATA = [
   {
     id: "1",
@@ -116,16 +115,125 @@ const DUMMY_DATA = [
     ],
     verified: true,
   },
+  {
+    id: "5",
+    title: "The oldest mountain range in the world",
+    channel: "Explotion TV",
+    views: "180k",
+    date: "1",
+    time: "year",
+    thumbNail: "/images/image5.jpg",
+    channelImage: "/images/profile5.jpg",
+    videoLength: "2:01",
+    tags: [
+      "All",
+      "Shirts",
+      "Shoes",
+      "Accessories",
+      "Hats",
+      "Socks",
+      "Underwear",
+      "Bags",
+      "Jackets",
+      "Sweaters",
+      "Suits",
+      "Shorts",
+      "Swimwear",
+      "Sleepwear",
+    ],
+    verified: true,
+  },
+  {
+    id: "6",
+    title: "The oldest mountain range in the world",
+    channel: "Jackie Chan",
+    views: "180k",
+    date: "1",
+    time: "year",
+    thumbNail: "/images/image6.jpg",
+    channelImage: "/images/profile6.jpg",
+    videoLength: "6:01",
+    tags: [
+      "All",
+      "Shirts",
+      "Shoes",
+      "Accessories",
+      "Hats",
+      "Socks",
+      "Underwear",
+      "Bags",
+      "Jackets",
+      "Sweaters",
+      "Suits",
+      "Shorts",
+      "Swimwear",
+      "Sleepwear",
+    ],
+    verified: true,
+  },
+  {
+    id: "7",
+    title: "The oldest mountain range in the world",
+    channel: "Strangers",
+    views: "180k",
+    date: "1",
+    time: "year",
+    thumbNail: "/images/image7.jpg",
+    channelImage: "/images/profile7.jpg",
+    videoLength: "34:01",
+    tags: [
+      "All",
+      "Shirts",
+      "Shoes",
+      "Accessories",
+      "Hats",
+      "Socks",
+      "Underwear",
+      "Bags",
+      "Jackets",
+      "Sweaters",
+      "Suits",
+      "Shorts",
+      "Swimwear",
+      "Sleepwear",
+    ],
+    verified: true,
+  },
+  {
+    id: "8",
+    title: "The oldest mountain range in the world",
+    channel: "Cloutes",
+    views: "130k",
+    date: "1",
+    time: "year",
+    thumbNail: "/images/image8.jpg",
+    channelImage: "/images/profile8.jpg",
+    videoLength: "2:01",
+    tags: [
+      "All",
+      "Shirts",
+      "Shoes",
+      "Accessories",
+      "Hats",
+      "Socks",
+      "Underwear",
+      "Bags",
+      "Jackets",
+      "Sweaters",
+      "Suits",
+      "Shorts",
+      "Swimwear",
+      "Sleepwear",
+    ],
+    verified: true,
+  },
 ];
-
-
 
 const Videos = () => {
   const [active, setActive] = useState(1);
   const [toggle, setToggle] = useState(false);
 
   const selectMenuValue = useSelector((state) => state.selectMenu.value);
-
 
   function getId(id) {
     setToggle(!toggle);
