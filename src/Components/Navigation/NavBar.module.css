@@ -10,7 +10,6 @@
 
 .nav div:nth-child(2) {
   flex: 2;
-
 }
 
 .container {
@@ -49,6 +48,12 @@
   width: 6rem;
 }
 
+/*Search*/
+
+.search {
+  position: relative;
+}
+
 .search form {
   display: flex;
   align-items: center;
@@ -81,12 +86,47 @@
   cursor: pointer;
 }
 
-
 .search button img {
   width: 1.5rem;
   fill: white;
 }
 
+.typing{
+  position: absolute;
+  background-color: white;
+  top: 37px;
+  border-radius: 8px;
+  left: 3rem;
+  width: 73%;
+  z-index: 999;
+  padding: 1rem 0;
+}
+
+
+
+.typing li {
+  list-style: none;
+}
+
+
+.typing div {
+  display: flex;
+  align-items: center;
+  margin: 2px 0;
+
+}
+
+.typing div:hover {
+  background-color: #ebebeb;
+  cursor: default;
+}
+
+.typing div img {
+  width: 1.5rem;
+  height: 2rem;
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
 
 /* MIcrophone*/
 
@@ -102,13 +142,13 @@
   margin-left: 5px;
 }
 
-.microphone:hover{
+.microphone:hover {
   background-color: hsla(0, 0%, 26%, 0.836);
 }
 
 .microphone svg {
   width: 1.5rem;
-  
+
   fill: white;
 }
 
@@ -125,7 +165,6 @@
 
 .nav div:nth-child(2) {
   flex: 2;
-
 }
 
 .container {
@@ -196,12 +235,10 @@
   cursor: pointer;
 }
 
-
 .search button svg {
   width: 1.5rem;
   fill: white;
 }
-
 
 /* MIcrophone*/
 
@@ -217,13 +254,13 @@
   margin-left: 5px;
 }
 
-.microphone:hover{
+.microphone:hover {
   background-color: hsla(0, 0%, 26%, 0.836);
 }
 
 .microphone svg {
   width: 1.5rem;
-  
+
   fill: white;
 }
 
@@ -233,7 +270,6 @@
   display: flex;
   justify-content: right;
   padding-right: 1rem;
-
 }
 
 .profile span {
@@ -245,10 +281,9 @@
   fill: white;
   cursor: pointer;
   font-size: 1px;
-
 }
 
-.profileImage{
+.profileImage {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -256,8 +291,6 @@
   width: 3rem;
   height: 3rem;
   cursor: pointer;
-  
-
 }
 
 .profileImage img {
@@ -269,4 +302,3 @@
 }
 
 /* Side Bar */
-

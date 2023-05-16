@@ -1,10 +1,25 @@
+import DropDown from "./DropDown";
 import classes from "./NavBar.module.css";
+import { useState } from "react";
 
 const Search = () => {
+  const [clicked, setClicked] = useState(false);
+  const [search, setSearch] = useState("");
+
+  function clickHandler(event) {
+    let value = event.target.value;
+    setSearch(value);
+    if (value.length > 0) {
+      setClicked(true);
+    } else {
+      setClicked(false);
+    }
+  }
+
   return (
     <div className={classes.search}>
       <form>
-        <input placeholder="Search"></input>
+        <input onChange={clickHandler} placeholder="Search"></input>
         <button>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -27,6 +42,7 @@ const Search = () => {
           </svg>
         </div>
       </form>
+      {clicked && <DropDown search={search}/>}
     </div>
   );
 };
