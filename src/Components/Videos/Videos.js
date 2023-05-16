@@ -128,7 +128,6 @@ const Videos = () => {
     setActive(id);
   }
 
-
   const DUMMY_DATA_FILTERED = DUMMY_DATA.filter((data) => {
     return data.tags.includes(selectMenuValue);
   });
