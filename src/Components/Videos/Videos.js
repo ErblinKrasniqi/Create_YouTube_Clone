@@ -1,5 +1,6 @@
 import Dots from "./Dots";
 import classes from "./Videos.module.css";
+import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 
@@ -249,7 +250,9 @@ const Videos = () => {
       {DUMMY_DATA_FILTERED.map((data) => (
         <div key={data.id} className={classes.video}>
           <div className={classes.image}>
+            <Link to={`/watch/${data.id}`}>
             <img alt="err" src={data.thumbNail}></img>
+            </Link>
             <h5>{data.videoLength}</h5>
           </div>
           <div className={classes.videoInfo}>
