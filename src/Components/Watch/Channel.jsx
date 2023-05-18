@@ -16,12 +16,27 @@ const channel = () => {
       <div className={classes.subscribe}>
         <button>SUBSCRIBE</button>
       </div>
-      <div className={classes.like}>
-        <div>
-          <img alt="err" src="/svgs/like.svg"></img>
-          <p>1.5k</p>
+      <div className={classes.buttons}>
+        <div className={classes.like}>
+          <div>
+            <img alt="err" src="/svgs/like.svg"></img>
+            <p>1.5k</p>
+          </div>
+          <img alt="err" src="/svgs/dislike.svg"></img>
         </div>
-        <img alt="err" src="/svgs/dislike.svg"></img>
+        <div className={classes.share}>
+          <img alt="err" src="/svgs/share.svg"></img>
+          <p>Share</p>
+        </div>
+
+        <div className={classes.share}>
+          <img alt="err" src="/svgs/save.svg"></img>
+          <p>Save</p>
+        </div>
+
+        <div className={classes.dots}>
+          <img alt="err" src="/svgs/horizontalDots.svg"></img>
+        </div>
       </div>
     </div>
   );

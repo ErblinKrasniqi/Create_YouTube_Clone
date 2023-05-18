@@ -1,6 +1,7 @@
 import { useParams, useLocation } from "react-router-dom";
 import Channel from "./Channel";
 import classes from "./WatchVideo.module.scss";
+import Description from "./Description";
 
 const WatchVideo = () => {
   const location = useLocation();
@@ -18,6 +19,7 @@ const WatchVideo = () => {
         <div className={classes.title}>
           <h3>This is just a exaple of a video that i got !</h3>
           <Channel />
+          <Description />
         </div>
       </div>
     </div>
