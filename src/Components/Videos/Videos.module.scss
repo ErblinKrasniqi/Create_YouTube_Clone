@@ -26,7 +26,6 @@
 
 /*media query for monitor 2560 */
 
-
 .videoInfo {
   display: flex;
   margin-top: 0.7rem;
@@ -115,19 +114,19 @@
 }
 
 @media (min-width: 2560px) {
-  .container{
+  .container {
     /* add grid tamplete columns 6 repeat min-content */
     grid-template-columns: repeat(6, min-content);
   }
-  .video{
+  .video {
     width: 22rem;
   }
 
-  .videoText{
-    h4{
+  .videoText {
+    h4 {
       font-size: 15px;
     }
-    p{
+    p {
       font-size: 13px;
     }
   }
