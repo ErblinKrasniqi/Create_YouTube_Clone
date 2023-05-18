@@ -2,6 +2,7 @@ import { useParams, useLocation } from "react-router-dom";
 import Channel from "./Channel";
 import classes from "./WatchVideo.module.scss";
 import Description from "./Description";
+import Videos from "./Videos";
 
 const WatchVideo = () => {
   const location = useLocation();

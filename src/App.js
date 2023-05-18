@@ -5,6 +5,7 @@ import React from "react";
 import classes from "./App.module.css";
 import Catergories from "./Components/Categories/Categories";
 import Videos from "./Components/Videos/Videos";
+import SideVideos from "./Components/Watch/Videos"
 import ErrorPage from "./ErrorPage";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import WatchVideo from "./Components/Watch/WatchVideo";
@@ -23,7 +24,16 @@ const router = createBrowserRouter([
     ),
     errorElement: <ErrorPage />,
   },
-  { path: "/watch/:id", element: <WatchVideo />, errorElement: <ErrorPage /> },
+  {
+    path: "/watch/:id",
+    element: (
+      <React.Fragment>
+        <WatchVideo />
+        <SideVideos />
+      </React.Fragment>
+    ),
+    errorElement: <ErrorPage />,
+  },
 ]);
 
 function App() {
