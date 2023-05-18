@@ -9,7 +9,7 @@ const ErrorPage = () => {
   return (
     <div className={classes.image}>
       <img alt="err" src="./cat.gif"></img>
-      <h1>Page not found ! <br></br> {error.data}</h1>
+      <h1>😵‍💫 Page not found 😵‍💫 <br></br> {error.data} </h1>
     </div>
   );
 };
