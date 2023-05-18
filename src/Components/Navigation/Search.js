@@ -1,12 +1,17 @@
 import DropDown from "./DropDown";
 import classes from "./NavBar.module.scss";
 import { useState } from "react";
+import { useNavigate} from "react-router-dom";
 
 const Search = () => {
   const [clicked, setClicked] = useState(false);
   const [search, setSearch] = useState("");
+  const navigate = useNavigate();
+
+  
 
   function clickHandler(event) {
+    
     let value = event.target.value;
     setSearch(value);
     if (value.length > 0) {
@@ -16,10 +21,29 @@ const Search = () => {
     }
   }
 
+  function handleSubmit() {
+    if (search.length > 0) {
+      setClicked(true);
+      navigate(`/results/${search}`); // Replace "/your-target-link" with the desired link you want to navigate to
+    } else {
+      setClicked(false);
+    }
+  }
+  
+
+  function handleKeyDown(event) {
+    if (event.key === "Enter") {
+      event.preventDefault(); // Prevent the form from submitting and reloading the page
+      handleSubmit();
+    }
+  }
+  
+
   return (
     <div className={classes.search}>
-      <form>
-        <input onChange={clickHandler} placeholder="Search"></input>
+      <form onSubmit={handleSubmit}>
+        
+        <input onKeyDown={handleKeyDown} onChange={clickHandler} placeholder="Search"></input>
         <button>
           <svg
             xmlns="http://www.w3.org/2000/svg"

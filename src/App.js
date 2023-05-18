@@ -33,12 +33,16 @@ const router = createBrowserRouter([
       <React.Fragment>
         <NavBar />
         <div className={classes.wrapper}>
-
           <WatchVideo />
           <SideVideos />
         </div>
       </React.Fragment>
     ),
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/results/:input",
+    element: <h1>Hey</h1>,
     errorElement: <ErrorPage />,
   },
 ]);
