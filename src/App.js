@@ -30,21 +30,21 @@ const router = createBrowserRouter([
   {
     path: "/watch/:id",
     element: (
-      <div className={classes.wrapper}>
-        <WatchVideo />
-        <SideVideos />
-      </div>
+      <React.Fragment>
+        <NavBar />
+        <div className={classes.wrapper}>
+
+          <WatchVideo />
+          <SideVideos />
+        </div>
+      </React.Fragment>
     ),
     errorElement: <ErrorPage />,
   },
 ]);
 
 function App() {
-  return (
-    <React.Fragment>
-      <RouterProvider router={router} />
-    </React.Fragment>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;

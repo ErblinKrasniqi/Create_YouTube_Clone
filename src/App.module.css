@@ -2,3 +2,8 @@
     display: grid;
     grid-template-columns: min-content auto;
 }
+
+.wrapper_Watch{
+    display: grid;
+    grid-template-columns: min-content min-content min-content;
+}

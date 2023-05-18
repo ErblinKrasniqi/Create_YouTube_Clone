@@ -1,6 +1,7 @@
 import classes from "./NavBar.module.css";
 import { toggleMenu } from "../App/store";
 import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 
 const Menu = () => {
   const dispatch = useDispatch();
@@ -17,7 +18,9 @@ const Menu = () => {
           <path d="M130.001 801.384V756h699.998v45.384H130.001Zm0-202.692v-45.384h699.998v45.384H130.001Zm0-202.692v-45.384h699.998V396H130.001Z" />
         </svg>
       </span>
-      <img alt="err" className={classes.logo} src="/youtube.svg"></img>
+      <Link to="/">
+        <img alt="err" className={classes.logo} src="/youtube.svg"></img>
+      </Link>
     </div>
   );
 };
