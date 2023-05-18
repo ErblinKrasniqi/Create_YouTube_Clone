@@ -1,4 +1,4 @@
-import classes from "./Videos.module.css";
+import classes from "./Videos.module.scss";
 
 const Dots = () => {
     return (

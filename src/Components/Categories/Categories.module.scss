@@ -4,29 +4,26 @@
   white-space: nowrap;
   overflow-x: hidden;
   width: 80vw;
-}
-
-.container::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 50px;
-  background: linear-gradient(to right, #0f0f0f, #0f0f0f9a);
-}
-
-.container::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  width: 50px; /* Adjust the width of the gradient */
-  background: linear-gradient(to left, #0f0f0f, #0f0f0f8e);
-}
-
-.container img {
-  width: 2rem;
+  img {
+    width: 2rem;
+  }
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50px;
+    background: linear-gradient(to right, #0f0f0f, #0f0f0f9a);
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 50px; /* Adjust the width of the gradient */
+    background: linear-gradient(to left, #0f0f0f, #0f0f0f8e);
+  }
 }
 
 .shade {
@@ -42,6 +39,9 @@
   padding: 0.2rem;
   cursor: pointer;
   z-index: 999;
+  &:hover {
+    background-color: #3f3f3fad;
+  }
 }
 
 .shadeRight {
@@ -57,14 +57,9 @@
   padding: 0.2rem;
   cursor: pointer;
   z-index: 999;
-}
-
-.shadeRight:hover {
-  background-color: #3f3f3fad;
-}
-
-.shade:hover {
-  background-color: #3f3f3fad;
+  &:hover {
+    background-color: #3f3f3fad;
+  }
 }
 
 .catergorie {
@@ -73,25 +68,22 @@
   display: inline-block;
   margin: 0.5rem 0.5rem;
   cursor: pointer;
-}
+  h1 {
+    color: white;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 7px 0.8rem;
 
-.hovering:hover {
-  background-color: #3f3f3f;
-}
-
-.catergorie h1 {
-  color: white;
-  font-size: 15px;
-  font-weight: 500;
-  padding: 7px 0.8rem;
-
-  margin: 0;
+    margin: 0;
+  }
+  &:hover {
+    background-color: #3f3f3f;
+  }
 }
 
 .active {
   background-color: rgb(233, 233, 233);
-}
-
-.active h1 {
-  color: #3f3f3f;
+  h1 {
+    color: #3f3f3f;
+  }
 }

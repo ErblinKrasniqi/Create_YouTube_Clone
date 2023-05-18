@@ -1,5 +1,5 @@
 import Dots from "./Dots";
-import classes from "./Videos.module.css";
+import classes from "./Videos.module.scss";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useSelector } from "react-redux";

@@ -1,4 +1,4 @@
-import classes from "./NavBar.module.css";
+import classes from "./NavBar.module.scss";
 import { toggleMenu } from "../App/store";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";

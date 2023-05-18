@@ -1,4 +1,4 @@
-import classes from "./SideBar.module.css";
+import classes from "./SideBar.module.scss";
 
 
 const Section = ({ data, getId, active, getClicked }) => {

@@ -1,4 +1,4 @@
-import classes from "./Categories.module.css";
+import classes from "./Categories.module.scss";
 import { useState, useRef } from "react";
 import { useDispatch } from "react-redux";
 import { setMenuValue } from "../App/store";

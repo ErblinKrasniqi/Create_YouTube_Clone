@@ -1,5 +1,5 @@
 import DropDown from "./DropDown";
-import classes from "./NavBar.module.css";
+import classes from "./NavBar.module.scss";
 import { useState } from "react";
 
 const Search = () => {

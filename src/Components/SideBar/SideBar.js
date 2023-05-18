@@ -1,5 +1,5 @@
 import Section from "./Section";
-import classes from "./SideBar.module.css";
+import classes from "./SideBar.module.scss";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 
