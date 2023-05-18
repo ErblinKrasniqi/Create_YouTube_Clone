@@ -5,7 +5,7 @@ import React from "react";
 import classes from "./App.module.css";
 import Catergories from "./Components/Categories/Categories";
 import Videos from "./Components/Videos/Videos";
-import SideVideos from "./Components/Watch/Videos"
+import SideVideos from "./Components/Watch/Videos";
 import ErrorPage from "./ErrorPage";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import WatchVideo from "./Components/Watch/WatchVideo";
@@ -15,10 +15,13 @@ const router = createBrowserRouter([
     path: "/",
     element: (
       <React.Fragment>
-        <SideBar />
-        <div className={classes.innerWrapper}>
-          <Catergories />
-          <Videos />
+        <NavBar />
+        <div className={classes.wrapper}>
+          <SideBar />
+          <div className={classes.innerWrapper}>
+            <Catergories />
+            <Videos />
+          </div>
         </div>
       </React.Fragment>
     ),
@@ -27,10 +30,10 @@ const router = createBrowserRouter([
   {
     path: "/watch/:id",
     element: (
-      <React.Fragment>
+      <div className={classes.wrapper}>
         <WatchVideo />
         <SideVideos />
-      </React.Fragment>
+      </div>
     ),
     errorElement: <ErrorPage />,
   },
@@ -39,10 +42,7 @@ const router = createBrowserRouter([
 function App() {
   return (
     <React.Fragment>
-      <NavBar />
-      <div className={classes.wrapper}>
-        <RouterProvider router={router} />
-      </div>
+      <RouterProvider router={router} />
     </React.Fragment>
   );
 }
