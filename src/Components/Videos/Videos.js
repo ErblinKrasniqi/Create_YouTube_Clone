@@ -228,7 +228,6 @@ const DUMMY_DATA = [
     ],
     verified: true,
   },
-  
 ];
 
 const Videos = () => {
@@ -252,7 +251,7 @@ const Videos = () => {
         <div key={data.id} className={classes.video}>
           <div className={classes.image}>
             <Link to={`/watch/${data.id}`}>
-            <img alt="err" src={data.thumbNail}></img>
+              <img alt="err" src={data.thumbNail}></img>
             </Link>
             <h5>{data.videoLength}</h5>
           </div>

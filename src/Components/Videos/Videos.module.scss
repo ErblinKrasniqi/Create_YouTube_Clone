@@ -24,6 +24,9 @@
   }
 }
 
+/*media query for monitor 2560 */
+
+
 .videoInfo {
   display: flex;
   margin-top: 0.7rem;
@@ -108,6 +111,25 @@
     -webkit-line-clamp: 2;
     overflow: hidden;
     text-overflow: ellipsis;
+  }
+}
+
+@media (min-width: 2560px) {
+  .container{
+    /* add grid tamplete columns 6 repeat min-content */
+    grid-template-columns: repeat(6, min-content);
+  }
+  .video{
+    width: 22rem;
+  }
+
+  .videoText{
+    h4{
+      font-size: 15px;
+    }
+    p{
+      font-size: 13px;
+    }
   }
 }
 
