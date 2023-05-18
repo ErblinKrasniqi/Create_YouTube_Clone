@@ -9,6 +9,7 @@ import SideVideos from "./Components/Watch/Videos";
 import ErrorPage from "./ErrorPage";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import WatchVideo from "./Components/Watch/WatchVideo";
+import SearchVideos from "./Components/SearchVideos/SeacrhVideos";
 
 const router = createBrowserRouter([
   {
@@ -42,7 +43,15 @@ const router = createBrowserRouter([
   },
   {
     path: "/results/:input",
-    element: <h1>Hey</h1>,
+    element: (
+      <React.Fragment>
+        <NavBar />
+        <div className={classes.wrapper}>
+          <SideBar />
+          <SearchVideos />
+        </div>
+      </React.Fragment>
+    ),
     errorElement: <ErrorPage />,
   },
 ]);
