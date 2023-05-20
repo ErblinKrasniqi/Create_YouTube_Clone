@@ -72,8 +72,8 @@ const SearchVideos = () => {
   return (
     <div className={classes.videos}>
       {DUMMY_DATA.map((data) => (
-        <Link to={`/watch/${data.id}`}>
-          <div key={data.id}>
+        <Link key={data.id} to={`/watch/${data.id}`}>
+          <div>
             <div className={classes.photo}>
               <img alt="err" src={`/images/${data.image}.jpg`}></img>
               <h4>{data.time}</h4>

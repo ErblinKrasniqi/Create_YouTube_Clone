@@ -1,4 +1,3 @@
-import { set } from "animejs";
 import DropDown from "./DropDown";
 import classes from "./NavBar.module.scss";
 import { useState } from "react";

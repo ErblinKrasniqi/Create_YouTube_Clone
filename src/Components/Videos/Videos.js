@@ -12,8 +12,8 @@ const DUMMY_DATA = [
     views: "180k",
     date: "1",
     time: "year",
-    thumbNail: "/images/image1.jpg",
-    channelImage: "/images/profile1.jpg",
+    thumbNail: "image1",
+    channelImage: "profile1",
     videoLength: "2:01",
     tags: [
       "All",
@@ -40,8 +40,8 @@ const DUMMY_DATA = [
     views: "180k",
     date: "1",
     time: "year",
-    thumbNail: "/images/image2.jpg",
-    channelImage: "/images/profile2.jpg",
+    thumbNail: "image2",
+    channelImage: "profile2",
     videoLength: "5:05",
     tags: [
       "All",
@@ -68,8 +68,8 @@ const DUMMY_DATA = [
     views: "180k",
     date: "1",
     time: "year",
-    thumbNail: "/images/image3.jpg",
-    channelImage: "/images/profile3.jpg",
+    thumbNail: "image3",
+    channelImage: "profile3",
     videoLength: "20:10",
     tags: [
       "All",
@@ -95,8 +95,8 @@ const DUMMY_DATA = [
     views: "180k",
     date: "1",
     time: "year",
-    thumbNail: "/images/image4.jpg",
-    channelImage: "/images/profile4.jpg",
+    thumbNail: "image4",
+    channelImage: "profile4",
     videoLength: "14:01",
     tags: [
       "All",
@@ -123,8 +123,8 @@ const DUMMY_DATA = [
     views: "180k",
     date: "1",
     time: "year",
-    thumbNail: "/images/image5.jpg",
-    channelImage: "/images/profile5.jpg",
+    thumbNail: "image5",
+    channelImage: "profile5",
     videoLength: "2:01",
     tags: [
       "All",
@@ -151,8 +151,8 @@ const DUMMY_DATA = [
     views: "180k",
     date: "1",
     time: "year",
-    thumbNail: "/images/image6.jpg",
-    channelImage: "/images/profile6.jpg",
+    thumbNail: "image6",
+    channelImage: "profile6",
     videoLength: "6:01",
     tags: [
       "All",
@@ -179,8 +179,8 @@ const DUMMY_DATA = [
     views: "180k",
     date: "1",
     time: "year",
-    thumbNail: "/images/image7.jpg",
-    channelImage: "/images/profile7.jpg",
+    thumbNail: "image7",
+    channelImage: "profile7",
     videoLength: "34:01",
     tags: [
       "All",
@@ -207,8 +207,8 @@ const DUMMY_DATA = [
     views: "130k",
     date: "1",
     time: "year",
-    thumbNail: "/images/image8.jpg",
-    channelImage: "/images/profile8.jpg",
+    thumbNail: "image8",
+    channelImage: "profile8",
     videoLength: "2:01",
     tags: [
       "All",
@@ -233,6 +233,23 @@ const DUMMY_DATA = [
 const Videos = () => {
   const [active, setActive] = useState(1);
   const [toggle, setToggle] = useState(false);
+  // const [data, setData] = useState();
+
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const response = await fetch("http://localhost:5000/create");
+  //       const jsonData = await response.json();
+  //       setData(jsonData);
+  //     } catch (err) {
+  //       console.error(err.message);
+  //     }
+  //   };
+
+  //   fetchData();
+  // }, []);
+
+  // console.log(data);
 
   const selectMenuValue = useSelector((state) => state.selectMenu.value);
 
@@ -247,37 +264,37 @@ const Videos = () => {
 
   return (
     <div className={classes.container}>
-      {DUMMY_DATA_FILTERED.map((data) => (
-        <div key={data.id} className={classes.video}>
+      {DUMMY_DATA_FILTERED.map((item) => (
+        <div key={item.id} className={classes.video}>
           <div className={classes.image}>
-            <Link to={`/watch/${data.id}`}>
-              <img alt="err" src={data.thumbNail}></img>
+            <Link to={`/watch/${item.id}`}>
+              <img alt="err" src={`/images/${item.thumbNail}.jpg`}></img>
             </Link>
-            <h5>{data.videoLength}</h5>
+            <h5>{item.videoLength}</h5>
           </div>
           <div className={classes.videoInfo}>
-            <img alt="err" src={data.channelImage}></img>
+            <img alt="err" src={`/images/${item.channelImage}.jpg`}></img>
 
             <div className={classes.videoText}>
               <div className={classes.dots}>
-                <h4>{data.title}</h4>
+                <h4>{item.title}</h4>
                 <img
-                  onClick={() => getId(data.id)}
+                  onClick={() => getId(item.id)}
                   alt="err"
                   src="/svgs/dots.svg"
                 ></img>
-                {active === data.id && toggle === true ? <Dots /> : ""}
+                {active === item.id && toggle === true ? <Dots /> : ""}
               </div>
               <div className={classes.verified}>
-                <h4>{data.channel}</h4>
-                {data.verified === true ? (
+                <h4>{item.channel}</h4>
+                {item.verified === true ? (
                   <img alt="err" src="/svgs/check.svg"></img>
                 ) : (
                   ""
                 )}
               </div>
               <h2 className={classes.views}>
-                {data.views} views * {data.time} ago
+                {item.views} views * {item.time} ago
               </h2>
             </div>
           </div>
